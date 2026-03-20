@@ -58,6 +58,8 @@ namespace Jackett.Common.Indexers.Definitions
 
         public override TorznabCapabilities TorznabCaps => SetCapabilities();
 
+        private readonly ConfigurationData.BoolConfigurationItem _titleOnly;
+
         public AudioBookBay(IIndexerConfigurationService configService, WebClient wc, Logger l, IProtectionService ps, ICacheService cs)
             : base(configService: configService,
                    client: wc,
@@ -67,6 +69,11 @@ namespace Jackett.Common.Indexers.Definitions
                    configData: new ConfigurationData())
         {
             webclient.requestDelay = 6.1;
+            _titleOnly = new ConfigurationData.BoolConfigurationItem("Title search only (more precise, fewer results)")
+            {
+                Value = true
+            };
+            configData.AddDynamic("titleOnly", _titleOnly);
         }
 
         private TorznabCapabilities SetCapabilities()
@@ -86,7 +93,7 @@ namespace Jackett.Common.Indexers.Definitions
 
         public override IIndexerRequestGenerator GetRequestGenerator()
         {
-            return new AudioBookBayRequestGenerator(SiteLink);
+            return new AudioBookBayRequestGenerator(SiteLink, _titleOnly.Value);
         }
 
         public override IParseIndexerResponse GetParser()
@@ -135,10 +142,12 @@ namespace Jackett.Common.Indexers.Definitions
     public class AudioBookBayRequestGenerator : IIndexerRequestGenerator
     {
         private readonly string _siteLink;
+        private readonly bool _titleOnly;
 
-        public AudioBookBayRequestGenerator(string siteLink)
+        public AudioBookBayRequestGenerator(string siteLink, bool titleOnly)
         {
             _siteLink = siteLink;
+            _titleOnly = titleOnly;
         }
 
         public IndexerPageableRequestChain GetSearchRequests(TorznabQuery query)
@@ -153,7 +162,11 @@ namespace Jackett.Common.Indexers.Definitions
             {
                 searchString = Regex.Replace(searchString, @"[\W]+", " ").Trim().ToLower();
                 queryParameters.Set("s", searchString);
-                queryParameters.Set("tt", "1");
+
+                if (_titleOnly)
+                {
+                    queryParameters.Set("tt", "1");
+                }
             }
 
             pageableRequests.Add(GetPagedRequests(queryParameters));
