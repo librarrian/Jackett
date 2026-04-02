@@ -305,6 +305,7 @@ namespace Jackett.Updater
                 "Definitions/bitme.yml",
                 "Definitions/bitnova.yml",
                 "Definitions/bitofvalor.yml",
+                "Definitions/bitsearch.yml",
                 "Definitions/bitsexy.yml",
                 "Definitions/bitsexy-api.yml",
                 "Definitions/bitspyder.yml",
@@ -360,6 +361,7 @@ namespace Jackett.Updater
                 "Definitions/cztorrent.yml",
                 "Definitions/dajiao.yml",
                 "Definitions/danishbytes.yml", // migrated to C#
+                "Definitions/danishbytes-api.yml ", // renamed to nordicbytes #10758
                 "Definitions/dariustracker.yml",
                 "Definitions/dark-shadow.yml",
                 "Definitions/darktracker.yml",
@@ -434,6 +436,7 @@ namespace Jackett.Updater
                 "Definitions/freedomhd.yml",
                 "Definitions/freetorrent.yml",
                 "Definitions/freshmeat.yml",
+                "Definitions/frozenlayer.yml",
                 "Definitions/fsm.yml",
                 "Definitions/fullmixmusic.yml",
                 "Definitions/funreleases.yml",
@@ -496,6 +499,7 @@ namespace Jackett.Updater
                 "Definitions/horriblesubs.yml",
                 "Definitions/horrorsite.yml",
                 "Definitions/hqsource.yml",
+                "Definitions/huntorrent-bithorlo.yml", // merged with huntorrent
                 "Definitions/hush.yml",
                 "Definitions/hyperay.yml",
                 "Definitions/ibit.yml",
@@ -544,6 +548,7 @@ namespace Jackett.Updater
                 "Definitions/leparadisdunet.yml",
                 "Definitions/lepornoinfo.yml",
                 "Definitions/les-cinephiles.yml",
+                "Definitions/lesbians4u.yml",
                 "Definitions/leporno.yml",
                 "Definitions/liaorencili.yml", // renamed to cilipro
                 "Definitions/lightning-tor.yml",
@@ -565,6 +570,7 @@ namespace Jackett.Updater
                 "Definitions/metal-iplay-ro.yml", // renamed to romanianmetaltorrents
                 "Definitions/metalwrks.yml",
                 "Definitions/microbit.yml",
+                "Definitions/mircrew.yml",
                 "Definitions/mkvcage.yml",
                 "Definitions/moecat.yml",
                 "Definitions/mononokebt.yml",
@@ -702,6 +708,7 @@ namespace Jackett.Updater
                 "Definitions/sharespacedb.yml",
                 "Definitions/shareuniversity.yml",
                 "Definitions/sharewood.yml", // switch to *-API #10269
+                "Definitions/sharewood-api.yml",
                 "Definitions/sharingue.yml",
                 "Definitions/shellife.yml",
                 "Definitions/sharkpt.yml",
@@ -723,6 +730,7 @@ namespace Jackett.Updater
                 "Definitions/spidertk.yml",
                 "Definitions/sporthd.yml",
                 "Definitions/sportscraze.yml",
+                "Definitions/sugoimusic.yml",
                 "Definitions/sukebei-pantsu.yml",
                 "Definitions/swarmazon.yml", //  switched to *-API #13725
                 "Definitions/t411.yml",
